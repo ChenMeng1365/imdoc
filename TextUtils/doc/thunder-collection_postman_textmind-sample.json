@@ -1,0 +1,623 @@
+{
+    "info": {
+        "_postman_id": "bfe547c0-44a7-4a7f-bc4d-fbe2270dbce0",
+        "name": "textmind-sample",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "step.1",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/match/paragraph",
+                    "path": [
+                        "text",
+                        "match",
+                        "paragraph"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"start\": \"ip pool\",\n  \"finish\": \"#\",\n  \"text\": \"aaa\\n  domain uni_static\\n    authentication-scheme default0\\n    accounting-scheme default0\\n    ip-pool static-1\\n    ip-pool static-2\\n    user-group static\\n  #\\n  domain uni_static_permit\\n    authentication-scheme default0\\n    accounting-scheme default0\\n    ip-pool static-1\\n    ip-pool static-2\\n    user-group static_permit\\n  #\\n#\\nip pool static-2 bas local\\n  gateway 100.100.100.1 255.255.255.0\\n  section 0 100.100.100.2 100.100.100.254\\n  excluded-ip-address 100.100.100.2 100.100.100.254\\n  dns-server 8.8.8.8 114.114.114.114\\n#\\ninterface Eth-Trunk5.26390409\\n  description USER::STATIC-USER-NUMBER::USERNAME.CO::50M\\n  statistic enable\\n  user-vlan 409 qinq 2639\\n  bas\\n    access-type layer2-subscriber default-domain authentication uni_static\\n    authentication-method bind\\n    qos-profile uni_50m inbound pe-vid 2639 ce-vid 409 identifier none\\n    qos-profile uni_50m outbound pe-vid 2639 ce-vid 409 identifier none\\n    arp-proxy\\n    ip-trigger\\n    arp-trigger\\n  #\\n#\\nstatic-user STATIC_USER_NUMBER 100.100.100.32 100.100.100.34 gateway 100.100.100.1 interface Eth-Trunk5.26390409 vlan 409 qinq 2639 domain-name uni_static detect\"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.2",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/map",
+                    "path": [
+                        "list",
+                        "map"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"func\": \"lambda{|pool|pool / \\\"\\n\\\"}\",\n  \"list\": [\n    \" static-2 bas local\\n  gateway 100.100.100.1 255.255.255.0\\n  section 0 100.100.100.2 100.100.100.254\\n  excluded-ip-address 100.100.100.2 100.100.100.254\\n  dns-server 8.8.8.8 114.114.114.114\\n\"\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "step.3",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/pop",
+                    "path": [
+                        "list",
+                        "pop"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    [\n      \" static-2 bas local\",\n      \"  gateway 100.100.100.1 255.255.255.0\",\n      \"  section 0 100.100.100.2 100.100.100.254\",\n      \"  excluded-ip-address 100.100.100.2 100.100.100.254\",\n      \"  dns-server 8.8.8.8 114.114.114.114\"\n    ]\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "step.4.1",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/shift",
+                    "path": [
+                        "list",
+                        "shift"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \" static-2 bas local\",\n    \"  gateway 100.100.100.1 255.255.255.0\",\n    \"  section 0 100.100.100.2 100.100.100.254\",\n    \"  excluded-ip-address 100.100.100.2 100.100.100.254\",\n    \"  dns-server 8.8.8.8 114.114.114.114\"\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "step.4.2",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/split",
+                    "path": [
+                        "text",
+                        "split"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"text\": \" static-2 bas local\",\n  \"split\": \" \"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.4.3",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/shift",
+                    "path": [
+                        "list",
+                        "shift"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \"static-2\",\n    \"bas\",\n    \"local\"\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "step.5",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/match",
+                    "path": [
+                        "list",
+                        "match"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \" static-2 bas local\",\n    \"  gateway 100.100.100.1 255.255.255.0\",\n    \"  section 0 100.100.100.2 100.100.100.254\",\n    \"  excluded-ip-address 100.100.100.2 100.100.100.254\",\n    \"  dns-server 8.8.8.8 114.114.114.114\"\n  ],\n  \"func\": \"lambda{|line|line.include? \\\"gateway\\\"}\"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.6",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/split",
+                    "path": [
+                        "text",
+                        "split"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"text\": \"  gateway 100.100.100.1 255.255.255.0\",\n  \"split\": \" \"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.7",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/sub",
+                    "path": [
+                        "list",
+                        "sub"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \"gateway\",\n    \"100.100.100.1\",\n    \"255.255.255.0\"\n  ],\n  \"lidx\": 2,\n  \"ridx\": 3\n}"
+                }
+            }
+        },
+        {
+            "name": "step.8",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/match",
+                    "path": [
+                        "list",
+                        "match"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \" static-2 bas local\",\n    \"  gateway 100.100.100.1 255.255.255.0\",\n    \"  section 0 100.100.100.2 100.100.100.254\",\n    \"  excluded-ip-address 100.100.100.2 100.100.100.254\",\n    \"  dns-server 8.8.8.8 114.114.114.114\"\n  ],\n  \"func\": \"lambda{|line|line.include? \\\"section\\\"}\"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.9",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/split",
+                    "path": [
+                        "text",
+                        "split"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"text\": \"  section 0 100.100.100.2 100.100.100.254\",\n  \"split\": \" \"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.10",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/sub",
+                    "path": [
+                        "list",
+                        "sub"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \"section\",\n    \"0\",\n    \"100.100.100.2\",\n    \"100.100.100.254\"\n  ],\n  \"lidx\": 3,\n  \"ridx\": 4\n}"
+                }
+            }
+        },
+        {
+            "name": "step.11",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/match",
+                    "path": [
+                        "list",
+                        "match"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \" static-2 bas local\",\n    \"  gateway 100.100.100.1 255.255.255.0\",\n    \"  section 0 100.100.100.2 100.100.100.254\",\n    \"  excluded-ip-address 100.100.100.2 100.100.100.254\",\n    \"  dns-server 8.8.8.8 114.114.114.114\"\n  ],\n  \"func\": \"lambda{|line|line.include? \\\"dns-server\\\"}\"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.12",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/split",
+                    "path": [
+                        "text",
+                        "split"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"text\": \"  dns-server 8.8.8.8 114.114.114.114\",\n  \"split\": \" \"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.13",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/sub",
+                    "path": [
+                        "list",
+                        "sub"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \"dns-server\",\n    \"8.8.8.8\",\n    \"114.114.114.114\"\n  ],\n  \"lidx\": 2\n}"
+                }
+            }
+        },
+        {
+            "name": "step.14",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/reduce",
+                    "path": [
+                        "list",
+                        "reduce"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\n    \"8.8.8.8\",\n    \"114.114.114.114\"\n  ], \n  \"func\": \"lambda{|cat, ip|(cat + \\\" \\\" + ip).strip}\",\n  \"init\": \" : text\"\n}"
+                }
+            }
+        },
+        {
+            "name": "step.16",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/catch",
+                    "path": [
+                        "list",
+                        "catch"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\"pool\",\"gateway\",\"start\",\"end\", \"mask\", \"dns\"],\n  \"oprands\": [\n    [\n      \"static-2\", \"100.100.100.1\",\"100.100.100.2\",\n      \"100.100.100.254\",\n      \"255.255.255.0\",\"8.8.8.8 114.114.114.114\"\n    ]\n  ]\n}"
+                }
+            }
+        }
+    ]
+}

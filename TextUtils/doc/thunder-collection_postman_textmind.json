@@ -1,0 +1,1454 @@
+{
+    "info": {
+        "_postman_id": "1126706c-b622-4359-af31-d314c89a0066",
+        "name": "textmind",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "127.0.0.1:9200/type/int",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/type/int",
+                    "path": [
+                        "type",
+                        "int"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"radix\": 10,\n  \"text\": \"100\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/type/float",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/type/float",
+                    "path": [
+                        "type",
+                        "float"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tail\": 2,\n  \"text\": \"3.14.15926\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/type/precent",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/type/precent",
+                    "path": [
+                        "type",
+                        "precent"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tail\": 2,\n  \"text\": \"0.8675309\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/type/bool",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/type/bool",
+                    "path": [
+                        "type",
+                        "bool"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"text\": \"\\\"false\\\"\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/type/text",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/type/text",
+                    "path": [
+                        "type",
+                        "text"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"format\": \"meta\",\n  \"text\": \"yes, indeed.\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/head",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/head",
+                    "path": [
+                        "text",
+                        "head"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"prefix\": \"abc\",\n  \"strip\": true,\n  \"text\": \" abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/tail",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/tail",
+                    "path": [
+                        "text",
+                        "tail"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"postfix\": \"efg\",\n  \"strip\": true,\n  \"text\": \"abcdefg \"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/empty",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/empty",
+                    "path": [
+                        "text",
+                        "empty"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"text\": \"\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/include",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/include",
+                    "path": [
+                        "text",
+                        "include"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"pattern\": \"def\",\n  \"text\": \"abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/length",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/length",
+                    "path": [
+                        "text",
+                        "length"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"text\": \"abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/strip",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/strip",
+                    "path": [
+                        "text",
+                        "strip"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"flag\": \"both\",\n  \"text\": \" abcdefg \"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/split",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/split",
+                    "path": [
+                        "text",
+                        "split"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"oprand\": \",\",\n  \"text\": \"abc,def,ghi,jkl\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/*",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/*",
+                    "path": [
+                        "text",
+                        "*"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"oprand\": \"3\",\n  \"text\": \"abc\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/-",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/-",
+                    "path": [
+                        "text",
+                        "-"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"oprand\": \"d\",\n  \"text\": \"abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/+",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/+",
+                    "path": [
+                        "text",
+                        "+"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"oprand\": \"hijklmn\",\n  \"text\": \"abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/join",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/join",
+                    "path": [
+                        "text",
+                        "join"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"attaches\": [\n    \"22345678\",\n    \"32345678\",\n    \"42345678\"\n    ],\n    \"text\": \"12345678\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/cut",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/cut",
+                    "path": [
+                        "text",
+                        "cut"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"lidx\": 2,\n  \"ridx\": 6,\n  \"text\": \"abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/match",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/match",
+                    "path": [
+                        "text",
+                        "match"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"patterns\": [\n    \"bcd\", \"efg\"\n    ],\n    \"mode\": \"union\",\n    \"text\": \"abcdefg abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/exchange",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/exchange",
+                    "path": [
+                        "text",
+                        "exchange"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"oldtext\": \"abc\",\n  \"newtext\": \"def\",\n  \"repeat\": 2,\n  \"text\": \"abcdefg abcdefg abcdefg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "   http://127.0.0.1:9200/text/draw/lines",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/draw/lines",
+                    "path": [
+                        "text",
+                        "draw",
+                        "lines"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"preflag\": \"a\",\n  \"postflag\": \"b\",\n  \"text\": \"1111\\na\\n2222\\nb\\n3333\\na\\n4444\\nb\\n5555\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/match/para",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/match/paragraph",
+                    "path": [
+                        "text",
+                        "match",
+                        "paragraph"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"start\": \"a\",\n  \"finish\": \"b\",\n  \"text\": \"a11111a2222b3333a4444b5555b\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/match/cascade",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/match/cascade",
+                    "path": [
+                        "text",
+                        "match",
+                        "cascade"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"start\": \"a\",\n  \"finish\": \"b\",\n  \"text\": \"a11111a2222b3333a4444b5555b\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/text/match/xml",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/text/match/xml",
+                    "path": [
+                        "text",
+                        "match",
+                        "xml"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tag\": \"a\",\n  \"text\": \"<a>11111<a><a>2222</a><a>3333</a>4444</a>5555</a>\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/shift",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/shift",
+                    "path": [
+                        "list",
+                        "shift"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\"a\",\"b\",\"c\"]\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/pop",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/pop",
+                    "path": [
+                        "list",
+                        "pop"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\"a\",\"b\",\"c\"]\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/push",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/push",
+                    "path": [
+                        "list",
+                        "push"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"item\": \"d\",\n  \"list\": [\"ab\",\"c\"]\n}"
+                }
+            }
+        },
+        {
+            "name": "127.0.0.1:9200/list/unshift",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/unshift",
+                    "path": [
+                        "list",
+                        "unshift"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"item\": \"d\",\n  \"list\": [\n    \"ab\",\n    \"c\"\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/catch",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/catch",
+                    "path": [
+                        "list",
+                        "catch"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [1,2,3],\n  \"oprands\": [[\"a\",\"b\",\"c\"],[\"d\",\"e\",\"f\"]]\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/-",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/-",
+                    "path": [
+                        "list",
+                        "-"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [1,2,3,\"a\",\"d\"],\n  \"oprand\": [\"a\",\"b\",\"c\"]\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/+",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/+",
+                    "path": [
+                        "list",
+                        "+"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [1,2,3],\n  \"oprand\": [\"a\",\"b\",\"c\"]\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/sub",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/sub",
+                    "path": [
+                        "list",
+                        "sub"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [1,2,3,4,5,6],\n  \"lidx\": 2,\n  \"ridx\": 5\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/sub",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/sub",
+                    "path": [
+                        "list",
+                        "sub"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [1,2,3,4,5,6],\n  \"lidx\": 2,\n  \"ridx\": 5\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/match",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/match",
+                    "path": [
+                        "list",
+                        "match"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\"a\",\"b\",\"c\",\"d\",\"ab\",\"abc\",\"abcd\"],\n  \"func\": \"lambda{|expr|expr.include?('a')}\",\n  \"repeat\": 3\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/map",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/map",
+                    "path": [
+                        "list",
+                        "map"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [1,2,3,4,5],\n  \"func\": \"lambda{|expr|expr.to_s * 3}\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/list/reduce",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/list/reduce",
+                    "path": [
+                        "list",
+                        "reduce"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"list\": [\"1\",\"2d\",\"3e3\",\"4a\",\"5v\"],\n  \"func\": \"lambda{|sum, expr|sum + expr.to_i}\",\n  \"init\": \"0 : integer\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/tree/values",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/tree/values",
+                    "path": [
+                        "tree",
+                        "values"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tree\": {\"a\": 1,\"b\": 2,\"c\":3}\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/tree/keys",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/tree/keys",
+                    "path": [
+                        "tree",
+                        "keys"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tree\": {\"a\": 1,\"b\": 2,\"c\":3}\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/tree/get",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/tree/get",
+                    "path": [
+                        "tree",
+                        "get"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tree\": {\"a\": 1,\"b\": 2,\"c\":3,\"4\": 4},\n  \"key\": 4\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/tree/set",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/tree/set",
+                    "path": [
+                        "tree",
+                        "set"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tree\": {\"a\": 1,\"b\": 2,\"c\":3},\n  \"key\": \"a\",\n  \"val\": \":a\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://127.0.0.1:9200/tree/+",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:9200/tree/+",
+                    "path": [
+                        "tree",
+                        "+"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "9200"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"tree\": {\"a\": 1,\"b\": 2,\"c\":3,\"0\": 0},\n  \"oprand\": [\"a\"]\n}"
+                }
+            }
+        }
+    ]
+}

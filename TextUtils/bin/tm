@@ -1,0 +1,26 @@
+require 'TextUtils/textmind'
+
+text = File.read ARGV[0]
+list = []
+tree = {}
+flows = (File.read ARGV[1]).split("----").map{|part|part.split("\n").select{|s|!s.empty?}}
+binding
+
+result = ""
+flows.each do|part|
+	part.each do|step|
+		next if step.strip[0]=='#' or step.empty?
+		result = eval(step)
+		if result.instance_of? Array
+			list = result
+		elsif result.instance_of? Hash
+			tree = result
+		else
+			text = result
+		end
+    	# puts "#{step} =>"
+		# pp result
+    	# puts Array.new(32,"----").join
+	end
+end
+puts result

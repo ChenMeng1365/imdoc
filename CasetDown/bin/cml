@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+#coding:utf-8
+require 'digest'
+require 'fileutils'
+
+if ARGV.empty?
+	cd = Dir.pwd
+	fs = '*'
+else
+	cd = ARGV.first
+	fs = ARGV.size>1 ? ARGV.last : '*'
+	(warn "No file(#{cd}/#{fs}) exist.";exit) unless File.exist?("#{cd}/#{fs}")
+end
+
+warn "DONT USE POSTFIX .latest.md, FILENAME.latest.md WONT BE UPDATED!"
+
+table = {}
+loop do
+	Dir["#{cd}/#{fs}"].each do|path|
+		next unless path[-3..-1]=='.md'
+		next if path[-10..-1]=='.latest.md'
+		unless table[path]
+			table[path] = [File.stat(path).atime, File.stat(path).size, Digest::MD5.hexdigest(File.read(path))]
+		end
+		otime, osize, odigest = table[path]
+		atime = File.stat(path).atime
+		asize = File.stat(path).size
+		if atime>otime # && (asize != osize || asize == osize)
+			adigest = Digest::MD5.hexdigest File.read(path)
+			if adigest!= odigest
+				`cm #{path}`
+				table[path] = [atime, asize, adigest]
+				latpath = (Dir["#{path[0..-4]}.*.md"] - ["#{path[0..-4]}.latest.md"]).max
+				File.delete("#{path[0..-4]}.latest.md")
+				puts ">#{path} changed -> #{latpath}(#{adigest}).";$stdout.flush
+				FileUtils.copy_file(latpath, "#{path[0..-4]}.latest.md")
+			end
+		end
+	end
+	sleep 1
+end

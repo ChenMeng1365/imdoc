@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+#coding:utf-8
+require 'CasetDown/casetdown'
+
+pool,check,source = ARGV,false,false
+
+if pool.include?('-h') or pool.include?('--help')
+  puts %Q{<<LIST>>
+  cm [options] <filename>[.md]
+
+  options:
+  --help     查看帮助
+  --check    检查文档结构
+  --source   查看文档中的源代码
+  --rtab     导入外部表格到文档中
+  --wtab     导出内部表格到外部文件
+  --input    导出源代码文件并渲染文档
+  --output   导出代码运行结果
+  --all      导出源代码和运行结果(input+output)
+  --preview  预览渲染文档(不生成渲染结果)
+  --debug    调试开关, 不删除中间代码
+  --rendfile 渲染文档并生成一个时间戳(默认)
+};exit
+end
+
+if pool.include?('--check')
+  check = true
+  pool.delete '--check'
+end
+if pool.include?('--source')
+  source = true
+  pool.delete '--source'
+end
+
+table,file = [],[]
+['--rtab','--wtab'].each do|tag|
+  if pool.include?(tag)
+    table << tag
+    pool.delete tag
+  end
+end
+['--input','--output','--all','--preview','--debug'].each do|tag|
+  if pool.include?(tag)
+    file << tag
+    pool.delete tag
+  end
+end
+
+path = pool.last
+path = Dir["./*.md"].last unless path
+exit unless path
+
+if File.exist?(path)
+  cds = CasetDown.load path
+elsif File.exist?("#{path}.md")
+  cds = CasetDown.load "#{path}.md"
+else
+  puts "File #{path} not exist.";exit
+end
+
+if check
+  puts "checking>>>>"
+  pp CasetDown::Check.all(cds)
+  exit
+end
+if source
+  puts "source>>>>"
+  pp CasetDown.search_codes(cds)
+  exit
+end
+
+tmp = CasetDown.render_table(cds, opt: table.map{|i|i[2..-1].to_sym})
+CasetDown.run_to_file cds, stream: tmp[:text], data: tmp[:data], fact: tmp[:fact], file: file.map{|i|i[2..-1].to_sym}+[:rendfile]
