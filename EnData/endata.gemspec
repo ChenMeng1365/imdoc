@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "endata"
-  spec.version       = '0.2.0'
+  spec.version       = '0.2.1'
   spec.authors       = ["Matt"]
   spec.email         = ["matthrewchains@gmail.com"]
 
@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.files         = [
     'EnData/endata',
     'EnData/endata-app',
-    # 'EnData/api-app', # no must
+    'EnData/api-app', # no must
   ].map{|file|"#{file}.rb"}
 
   spec.require_paths = ["."]

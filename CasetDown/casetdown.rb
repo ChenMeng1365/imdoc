@@ -4,7 +4,7 @@
 #USE: Tabot/simtab
 
 [
-  'EnData/endata', 'EnData/endata-app',
+  'EnData/endata', 'EnData/endata-app', 'EnData/api-app',
   'Tabot/newtab', 'Tabot/simtab',
   'TextUtils/text_abstract', 'TextUtils/text_absparser', 'TextUtils/text_mind',
   'TinText/tum', 'TinText/cache', 'TinText/tin_text', 'TinText/tintext',
