@@ -15,4 +15,5 @@ Gem::Specification.new do |spec|
   ].map{|file|"#{file}.rb"}
 
   spec.require_paths = ["."]
+  spec.add_runtime_dependency 'rexml',  ">= 3.0.0"
 end
