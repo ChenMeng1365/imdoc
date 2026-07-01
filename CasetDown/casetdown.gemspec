@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "casetdown"
-  spec.version       = '0.9.2'
+  spec.version       = '0.9.3'
   spec.authors       = ["Matt"]
   spec.email         = ["matthrewchains@gmail.com"]
 
